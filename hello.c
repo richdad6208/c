@@ -7,6 +7,9 @@ int main() {
 
     name = strncat(name, FIRST_NAME, 20); 
     name = strncat(name, LAST_NAME, 20); 
+
+    name = strncat(name, FIRST_NAME, 20); 
+    name = strncat(name, LAST_NAME, 20); 
     
     printf("$s\n", name);
     return 0; 
