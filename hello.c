@@ -1,12 +1,15 @@
 #include <stdio.h>
 
 int main(void) {
-    int num; 
+    float f; 
+    double d;
 
-    printf("정수를 입력해 주세요>"); 
-    scanf("%d", &num); 
+    printf("두 개의 실수를 입력해주세요>"); 
+    scanf("%f%lf", &f, &d);
 
-    printf("입력하신 숫자는 %d입니다.\n", num); 
+    printf("입력하신 실수는 %f입니다.\n", f); 
+    printf("입력하신 실수는 %f입니다.\n", d); 
 
-    return 0;
+    return 0; 
 }
+
