@@ -1,15 +1,18 @@
 #include <stdio.h>
 
+typedef union {
+    int hex;
+    float dec; 
+} int_float ; 
+
 int main(void) {
-    float f; 
-    double d;
+    int_float data; 
 
-    printf("두 개의 실수를 입력해주세요>"); 
-    scanf("%f%lf", &f, &d);
+    data.dec = 12.625f; 
+    printf("hex=%08X \t dec=%e\n", data.hex, data.dec);
 
-    printf("입력하신 실수는 %f입니다.\n", f); 
-    printf("입력하신 실수는 %f입니다.\n", d); 
+    data.hex = 0x414A0000;
+    printf("hex=%08X \t dec=%e\n", data.hex, data.dec); 
 
     return 0; 
 }
-
