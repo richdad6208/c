@@ -1,18 +1,22 @@
 #include <stdio.h>
+#include <float.h>
 
 typedef union {
     int hex;
-    float dec; 
-} int_float ; 
+    float dec;
+} int_float;
 
 int main(void) {
-    int_float data; 
+    int_float data, data2; 
 
-    data.dec = 12.625f; 
-    printf("hex=%08X \t dec=%e\n", data.hex, data.dec);
+    data.dec = 9.1234567f;
+    data2.hex = 0x4111F9AD;
 
-    data.hex = 0x414A0000;
-    printf("hex=%08X \t dec=%e\n", data.hex, data.dec); 
+    printf("hex=%08X\t dec=%20.18f\n", data.hex, data.dec); 
+    printf("hex=%08X\t dec=%20.18f\n", data2.hex, data2.dec);
+
+    printf("FLT_ROUNDS=%d\n", FLT_ROUNDS); 
+    printf("FLT_EPSILON=%11.10f\n", FLT_EPSILON); 
 
     return 0; 
 }
